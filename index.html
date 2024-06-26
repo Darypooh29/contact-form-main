@@ -21,41 +21,58 @@
   <body>
     <div class="container">
       <header>
-        <h1>Contact Us</h1>
+        <h1 class="header__title">Contact Us</h1>
       </header>
 
       <main>
         <form action="">
-          <span>First Name</span>
-          <input type="text" />
+          <div class="form__field-container">
+            <span>First Name</span>
+            <input type="text" required />
+          </div>
           <!-- This field is required -->
 
-          <span>Last Name</span>
-          <input type="text" />
+          <div class="form__field-container">
+            <span>Last Name</span>
+            <input type="text" required />
+          </div>
           <!-- This field is required -->
 
-          <span>Email Address</span>
-          <input type="text" />
+          <div class="form__field-container">
+            <span>Email Address</span>
+            <input type="email" required />
+          </div>
           <!-- Please enter a valid email address -->
           <!-- This field is required -->
 
-          <span>Query Type</span>
-          <input id="general_enquiry" type="radio" />
-          <label for="general_enquiry">General Enquiry</label>
+          
+          <div class="form__field-container">
+            <span>Query Type</span>
+            <div class="field-container__query-type-container">
+              <input id="general_enquiry" type="radio" />
+              <label for="general_enquiry">General Enquiry</label>
+            </div>
 
-          <input id="support_request" type="radio" />
-          <label for="support_request">Support Request</label>
+            <div class="field-container__query-type-container">
+              <input id="support_request" type="radio" />
+              <label for="support_request">Support Request</label>
+            </div>
+          </div>
           <!-- Please select a query type -->
 
-          <span>Message</span>
-          <textarea name="" id=""></textarea>
+          <div class="form__field-container">
+            <span>Message</span>
+            <textarea name="" id="" required></textarea>
+          </div>
           <!-- This field is required -->
 
-          <input type="text" />
-          <label for=""> I consent to being contacted by the team </label>
+          <div class="form__consent-container">
+            <input type="checkbox" />
+            <label for=""> I consent to being contacted by the team </label>
+          </div>
           <!-- To submit this form, please consent to being contacted -->
 
-          <button type="button">Submit</button>
+          <button type="submit">Submit</button>
           <!-- Message Sent! -->
           <!-- Thanks for completing the form. We'll be in touch soon! -->
         </form>
