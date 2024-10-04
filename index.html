@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Karla:wght@200..800&display=swap"
       rel="stylesheet"
     />
     <link
@@ -26,53 +26,59 @@
 
       <main>
         <form action="">
-          <div class="form__field-container">
-            <span>First Name</span>
-            <input type="text" required />
-          </div>
-          <!-- This field is required -->
+          <div class="form__fields-container">
+            <div class="form__field-container">
+              <label for="name">First Name<span>*</span></label>
+              <input id="name" type="text" required />
+              <span class="error-message">This field is required</span>
+            </div>
 
-          <div class="form__field-container">
-            <span>Last Name</span>
-            <input type="text" required />
+            <div class="form__field-container">
+              <label for="last_name">Last Name<span>*</span></label>
+              <input id="lastname" type="text" required />
+              <span class="error-message">This field is required</span>
+            </div>
           </div>
-          <!-- This field is required -->
-
-          <div class="form__field-container">
-            <span>Email Address</span>
-            <input type="email" required />
-          </div>
-          <!-- Please enter a valid email address -->
-          <!-- This field is required -->
-
           
           <div class="form__field-container">
-            <span>Query Type</span>
-            <div class="field-container__query-type-container">
-              <input id="general_enquiry" type="radio" />
-              <label for="general_enquiry">General Enquiry</label>
-            </div>
-
-            <div class="field-container__query-type-container">
-              <input id="support_request" type="radio" />
-              <label for="support_request">Support Request</label>
-            </div>
+            <label for="email">Email Address<span>*</span></label>
+            <input id="email" type="email" required />
+            <span class="error-message">Please enter a valid email address</span>
+            <span class="error-message">This field is required</span>
           </div>
-          <!-- Please select a query type -->
 
+          <div class="form__radio__buttons-container">
+            <label for="query_type">Query Type<span>*</span></label>
+            <div class="form__fields-container">
+              <div class="field-container__query-type-container">
+                <input name="option" id="general_enquiry" type="radio" value="General Enquiry"/>
+                <label for="general_enquiry">General Enquiry</label>
+              </div>
+
+              <div class="field-container__query-type-container">
+                <input name="option" id="support_request" type="radio" value="Support Request"/>
+                <label for="support_request">Support Request</label>
+              </div>
+            </div>
+            <span class="error-message">Please select a query type</span>
+          </div>
+          
           <div class="form__field-container">
-            <span>Message</span>
-            <textarea name="" id="" required></textarea>
+            <label for="message">Message<span>*</span></label>
+            <textarea name="" id="textarea" required></textarea>
+            <span class="error-message">This field is required</span>
           </div>
-          <!-- This field is required -->
 
           <div class="form__consent-container">
-            <input type="checkbox" />
-            <label for=""> I consent to being contacted by the team </label>
+            <div class="form__consent-container-message">
+              <input id="consent_checkbox" type="checkbox" />
+              <label for="consent"> I consent to being contacted by the team<span>*</span></label>
+            </div>
+            <span class="error-message">To submit this form, please consent to being contacted</span>
           </div>
           <!-- To submit this form, please consent to being contacted -->
 
-          <button type="submit">Submit</button>
+          <button id="submit_btn" type="submit">Submit</button>
           <!-- Message Sent! -->
           <!-- Thanks for completing the form. We'll be in touch soon! -->
         </form>
