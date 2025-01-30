@@ -51,6 +51,7 @@ form {
 
 label {
   font-size: 16px;
+  font-weight: 500;
 }
 
 label span {
@@ -62,16 +63,28 @@ textarea {
   height: 12rem;
 }
 
-input, textarea {
+input,
+textarea {
   padding: 1rem;
   border-radius: 0.5rem;
   outline: none;
   border: 1px solid var(--gray-color);
   cursor: pointer;
+  transition: 0.3s;
 }
 
-input:hover, textarea:hover {
-  border: 1px solid var(--button-color);
+input:hover,
+textarea:hover {
+  /* border: 1px solid var(--button-color); */
+  /* box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px; */
+  box-shadow: var(--button-color) 0px 1px 3px 0px,
+    var(--button-color) 0px 0px 0px 1px;
+}
+
+input:focus,
+textarea:focus {
+  box-shadow: var(--button-color) 0px 1px 3px 0px,
+    var(--button-color) 0px 0px 0px 1px;
 }
 
 .form__fields-container {
@@ -101,6 +114,7 @@ input:hover, textarea:hover {
 
 .field-container__query-type-container {
   display: flex;
+  align-items: center;
   gap: 0.6rem;
   border: 1px solid var(--gray-color);
   padding: 1rem 1.3rem;
@@ -109,8 +123,42 @@ input:hover, textarea:hover {
   cursor: pointer;
 }
 
-.field-container__query-type-container input {
-  width: 1rem;
+/* .selected-input {
+  padding: 5px;
+  border: 2px solid #000;
+} */
+
+input[type="radio"] {
+  appearance: none;
+  padding: 10px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  position: relative;
+  margin-right: 5px;
+  transition: all 0.3s ease;
+}
+
+input[type="radio"]:checked {
+}
+
+.selected-input:checked::after {
+  border: 2px solid var(--button-color);
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: var(--button-color);
+  padding: 5px;
+}
+
+.selected {
+  background-color: var(--background-color);
+  box-shadow: var(--button-color) 0px 1px 3px 0px,
+    var(--button-color) 0px 0px 0px 1px;
 }
 
 .form__consent-container {
@@ -131,13 +179,13 @@ input:hover, textarea:hover {
 }
 
 button {
-  padding:1rem;
+  padding: 1rem;
   background-color: var(--button-color);
   border-radius: 0.5rem;
   color: var(--white-color);
   border: none;
   font-size: 1rem;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 button:hover {
